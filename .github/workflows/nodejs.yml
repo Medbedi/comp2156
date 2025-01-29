@@ -23,10 +23,12 @@ jobs:
           echo "Listing files:"
           ls -al
 
-      - name: Move to project directory (if needed)
+      - name: Move to project directory
         run: |
-          if [ -d "comp2156" ]; then mv comp2156/* ./ && rm -rf comp2156; fi
+          if [ -d "comp2156" ]; then cd comp2156; fi
+          echo "Now in directory:"
           pwd
+          echo "Updated file list:"
           ls -al
 
       - name: Set up Node.js
@@ -36,7 +38,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: comp2156
 
       - name: Run tests
         run: npm test
+        working-directory: comp2156
 
