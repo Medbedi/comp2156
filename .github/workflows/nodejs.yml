@@ -21,6 +21,11 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Move to project directory (if needed)
+        run: |
+          ls -al
+          if [ -d "comp2156" ]; then cd comp2156; fi
+
       - name: Install dependencies
         run: npm install
 
