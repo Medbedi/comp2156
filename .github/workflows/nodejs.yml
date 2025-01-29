@@ -16,8 +16,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Verify working directory
+      - name: Debug current path
         run: |
+          echo "Current directory:"
+          pwd
+          echo "Listing files:"
+          ls -al
+
+      - name: Move to project directory (if needed)
+        run: |
+          if [ -d "comp2156" ]; then mv comp2156/* ./ && rm -rf comp2156; fi
           pwd
           ls -al
 
@@ -26,22 +34,9 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Move to project directory (if needed)
-        run: |
-          if [ -d "comp2156" ]; then cd comp2156; fi
-          pwd
-          ls -al
-
       - name: Install dependencies
         run: npm install
 
       - name: Run tests
         run: npm test
-
-      - name: Debug current path
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Listing files:"
-          ls -al
 
