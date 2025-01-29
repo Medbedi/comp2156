@@ -18,23 +18,21 @@ jobs:
 
       - name: Debug current path
         run: |
-          echo "Current directory:"
+          echo "🔍 Current directory:"
           pwd
-          echo "Listing files:"
-          ls -al
-
-      - name: Move to project directory
-        run: |
-          if [ -d "comp2156" ]; then cd comp2156; fi
-          echo "Now in directory:"
-          pwd
-          echo "Updated file list:"
+          echo "📂 Listing files:"
           ls -al
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+
+      - name: Move to project directory
+        run: |
+          if [ -d "comp2156" ]; then cd comp2156; fi
+          pwd
+          ls -al
 
       - name: Install dependencies
         run: npm install
