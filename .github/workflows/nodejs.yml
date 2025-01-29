@@ -13,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout code (clone into root directory)
         uses: actions/checkout@v2
+        with:
+          path: .
 
-      - name: Debug current path
+      - name: Debug working directory
         run: |
           echo "🔍 Current directory:"
           pwd
@@ -28,17 +30,9 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Move to project directory
-        run: |
-          if [ -d "comp2156" ]; then cd comp2156; fi
-          pwd
-          ls -al
-
       - name: Install dependencies
         run: npm install
-        working-directory: comp2156
 
       - name: Run tests
         run: npm test
-        working-directory: comp2156
 
