@@ -16,6 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Verify working directory
+        run: |
+          pwd
+          ls -al
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -23,8 +28,9 @@ jobs:
 
       - name: Move to project directory (if needed)
         run: |
-          ls -al
           if [ -d "comp2156" ]; then cd comp2156; fi
+          pwd
+          ls -al
 
       - name: Install dependencies
         run: npm install
