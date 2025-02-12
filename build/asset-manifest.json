@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Medbedi/comp2156/static/css/main.27ca76a1.css",
+    "main.js": "/Medbedi/comp2156/static/js/main.f801e7cf.js",
+    "static/js/453.f27d8bf6.chunk.js": "/Medbedi/comp2156/static/js/453.f27d8bf6.chunk.js",
+    "index.html": "/Medbedi/comp2156/index.html",
+    "main.27ca76a1.css.map": "/Medbedi/comp2156/static/css/main.27ca76a1.css.map",
+    "main.f801e7cf.js.map": "/Medbedi/comp2156/static/js/main.f801e7cf.js.map",
+    "453.f27d8bf6.chunk.js.map": "/Medbedi/comp2156/static/js/453.f27d8bf6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27ca76a1.css",
+    "static/js/main.f801e7cf.js"
+  ]
+}
